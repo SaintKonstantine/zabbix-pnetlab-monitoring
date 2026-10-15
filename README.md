@@ -28,7 +28,7 @@ including alerts when devices or links fail.
 - [ ] Dashboard and network map
 
 ## Troubleshooting
-Problems I ran into and how I solved them will go here.
+
 
 ## License
 MIT
