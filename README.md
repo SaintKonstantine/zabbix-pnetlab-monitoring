@@ -12,7 +12,7 @@ including alerts when devices or links fail.
 | Component      | Details                          |
 |----------------|----------------------------------|
 | Host OS        | Ubuntu (Linux)                   |
-| Hypervisor     | VirtualBox / VMware              |
+| Hypervisor     | VMware                           |
 | PNETLab        | Version TBD                      |
 | Zabbix server  | Ubuntu Server VM, Zabbix version TBD |
 | Devices        | Routers / switches / Linux hosts |
