@@ -14,15 +14,6 @@ The Zabbix server sits outside the lab and reaches every device through a
 **single link** to the PNETLab management cloud (Cloud0), attached to R5.
 All other devices (R6, SW1, SW2) are polled through R5 using static routes.
 
-```
-Zabbix appliance -- Cloud0 -- R5 ------------ R6
-192.168.139.129            |   10.0.0.0/30   |
-                           |                 |
-                          SW1               SW2
-                           |                 |
-                         VPC1              VPC2
-```
-
 | Device | Interface | Address | Role |
 |--------|-----------|---------|------|
 | R5 | e0/0, e0/1, e0/2 | 192.168.1.254/24, 10.0.0.1/30, 192.168.139.51/24 | Router, attached to Cloud0 |
