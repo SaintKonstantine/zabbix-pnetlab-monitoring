@@ -31,12 +31,6 @@ All other devices (R6, SW1, SW2) are polled through R5 using static routes.
 | Devices        | Cisco IOL routers and L2 switches, VPCS hosts    |
 | Protocol       | SNMPv2c, template "Cisco IOS by SNMP"            |
 
-## Progress
-- [x] PNETLab installed and topology built
-- [x] Basic routing configured (static routes)
-- [x] Zabbix server installed (appliance)
-- [x] SNMP monitoring of routers and switches
-- [x] Failure tests with screenshots
 
 ## Failure tests
 | Test | Action | Result |
