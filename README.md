@@ -32,26 +32,51 @@ All other devices (R6, SW1, SW2) are polled through R5 using static routes.
 | Devices        | Cisco IOL routers and L2 switches, VPCS hosts    |
 | Protocol       | SNMPv2c, template "Cisco IOS by SNMP"            |
 
+## Lab Report
+[docs/Zabbix-PNETLab-Lab-Report.pdf](docs/Zabbix-PNETLab-Lab-Report.pdf)
 
-### Test 1: interface shutdown on R6
+
+### Test 1: Interface shutdown on R6
+
+Before the failure injection.
 ![Before](screenshots/01-test1.png)
+
+Failure Injection on e0/1
 ![Injection](screenshots/02-test1-injection.png)
+
+Link Down (Warnings are just normal issues for the IOS images)
 ![Link down problem](screenshots/03-test1-link-down.png)
+
+SW1 fails
 ![SW2 down](screenshots/04-test1-sw2-down.png)
+
+We recover the connection activating e0/1.
 ![Recovery](screenshots/05-test1-recovery.png)
+
+Full recovery.
 ![Recovered](screenshots/06-test1-recovered.png)
 
-### Test 2: link cut on R5
+### Test 2: Interface shutdown on R5
+
+Before the failure injection.
 ![Before](screenshots/01-test2.png)
+
+Failure Injection on e0/1.
 ![Injection](screenshots/02-test2-injection.png)
+
+Link Down (Warnings are just normal issues for the IOS images) (we can also see that zabbix informs about the changed name on the router).
 ![R6 unavailable](screenshots/03-test2-r6-unavailable.png)
+
+R6 and SW2 fails. 
 ![R6 and SW2 down](screenshots/04-test2-r6-sw2-down.png)
+
+
+We recover the connection activating e0/1
 ![Recovery](screenshots/05-test2-recovery.png)
+
+Full recovery.
 ![Recovered](screenshots/06-test2-recovered.png)
 
-## Troubleshooting
-Full write-up with symptoms, causes, diagnosis and fixes:
-[docs/Zabbix-PNETLab-Lab-Report.pdf](docs/Zabbix-PNETLab-Lab-Report.pdf)
 
 Main problems solved:
 - Appliance could not reach routers: VMware promiscuous mode / `/dev/vmnet8` permission
