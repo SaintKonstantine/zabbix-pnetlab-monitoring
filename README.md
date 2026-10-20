@@ -24,9 +24,9 @@ All other devices (R6, SW1, SW2) are polled through R5 using static routes.
 ## Environment
 | Component      | Details                                          |
 |----------------|--------------------------------------------------|
-| Host OS        | Ubuntu (Linux)                                   |
+| Host OS        | Linux Mint                                       |
 | Hypervisor     | VMware Workstation (NAT, vmnet8)                 |
-| PNETLab        | Version: <fill in>                               |
+| PNETLab        | Version: 4.2.10                                  |
 | Zabbix server  | Zabbix 7.4.15 VMware appliance                   |
 | Devices        | Cisco IOL routers and L2 switches, VPCS hosts    |
 | Protocol       | SNMPv2c, template "Cisco IOS by SNMP"            |
@@ -37,7 +37,6 @@ All other devices (R6, SW1, SW2) are polled through R5 using static routes.
 - [x] Zabbix server installed (appliance)
 - [x] SNMP monitoring of routers and switches
 - [x] Failure tests with screenshots
-- [ ] Dashboard and network map
 
 ## Failure tests
 | Test | Action | Result |
