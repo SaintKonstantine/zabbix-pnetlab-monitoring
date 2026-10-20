@@ -34,7 +34,7 @@ All other devices (R6, SW1, SW2) are polled through R5 using static routes.
 
 
 ### Test 1: interface shutdown on R6
-![Before](screenshots/01before.png)
+![Before](screenshots/01-test1-before.png)
 ![Injection](screenshots/02-test1-injection.png)
 ![Link down problem](screenshots/03-test1-link-down.png)
 ![SW2 down](screenshots/04-test1-sw2-down.png)
@@ -42,12 +42,12 @@ All other devices (R6, SW1, SW2) are polled through R5 using static routes.
 ![Recovered](screenshots/06-test1-recovered.png)
 
 ### Test 2: link cut on R5
-![Before](screenshots/01-before.png)
-![Injection](screenshots/07-test2-injection.png)
-![R6 unavailable](screenshots/08-test2-r6-unavailable.png)
-![R6 and SW2 down](screenshots/09-test2-r6-sw2-down.png)
-![Recovery](screenshots/10-test2-recovery.png)
-![Recovered](screenshots/11-test2-recovered.png)
+![Before](screenshots/01-test2-before.png)
+![Injection](screenshots/02-test2-injection.png)
+![R6 unavailable](screenshots/03-test2-r6-unavailable.png)
+![R6 and SW2 down](screenshots/04-test2-r6-sw2-down.png)
+![Recovery](screenshots/05-test2-recovery.png)
+![Recovered](screenshots/06-test2-recovered.png)
 
 ## Troubleshooting
 Full write-up with symptoms, causes, diagnosis and fixes:
