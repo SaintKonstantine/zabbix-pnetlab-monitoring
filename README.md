@@ -55,10 +55,6 @@ Main problems solved:
 - Appliance needed static routes into the lab subnets
 - Zabbix database "Connection refused" after an appliance restart
 
-## Repository structure
-```
-
-```
 
 ## License
 MIT
