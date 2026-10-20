@@ -48,6 +48,7 @@ Screenshots are in `screenshots/`.
 
 ## Troubleshooting
 Full write-up with symptoms, causes, diagnosis and fixes:
+[docs/Zabbix-PNETLab-Lab-Report.pdf](docs/Zabbix-PNETLab-Lab-Report.pdf)
 
 Main problems solved:
 - Appliance could not reach routers: VMware promiscuous mode / `/dev/vmnet8` permission
