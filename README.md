@@ -1,11 +1,9 @@
 # zabbix-pnetlab-monitoring
-Network monitoring lab: Zabbix + SNMP on a PNETLab virtual topology
+Network monitoring lab: Zabbix + SNMP on a PNETLab virtual topology.
 
 ## Objective
 Build a virtual network in PNETLab and monitor it end to end with Zabbix,
 including detecting when devices or links fail.
-
-## Topology
 
 ## Topology
 ![Topology](topology/topology.png)
