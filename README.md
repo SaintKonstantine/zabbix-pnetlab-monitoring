@@ -3,32 +3,64 @@ Network monitoring lab: Zabbix + SNMP on a PNETLab virtual topology
 
 ## Objective
 Build a virtual network in PNETLab and monitor it end to end with Zabbix,
-including alerts when devices or links fail.
+including detecting when devices or links fail.
 
 ## Topology
-> Diagram coming soon (`topology/`)
+![Topology](topology/topology.png)
+
+The Zabbix server sits outside the lab and reaches every device through a
+**single link** to the PNETLab management cloud (Cloud0), attached to R5.
+All other devices (R6, SW1, SW2) are polled through R5 using static routes.
+
+| Device | Interface | Address | Role |
+|--------|-----------|---------|------|
+| R5 | e0/0, e0/1, e0/2 | 192.168.1.254/24, 10.0.0.1/30, 192.168.139.51/24 | Router, attached to Cloud0 |
+| R6 | e0/0, e0/1 | 10.0.0.2/30, 192.168.2.254/24 | Router |
+| SW1 | Vlan1 | 192.168.1.253/24 | L2 switch |
+| SW2 | Vlan1 | 192.168.2.253/24 | L2 switch |
+| Zabbix appliance | eth0 | 192.168.139.129/24 | Monitoring server |
 
 ## Environment
-| Component      | Details                          |
-|----------------|----------------------------------|
-| Host OS        | Ubuntu (Linux)                   |
-| Hypervisor     | VMware                           |
-| PNETLab        | Version TBD                      |
-| Zabbix server  | Ubuntu Server VM, Zabbix version TBD |
-| Devices        | Routers / switches / Linux hosts |
+| Component      | Details                                          |
+|----------------|--------------------------------------------------|
+| Host OS        | Ubuntu (Linux)                                   |
+| Hypervisor     | VMware Workstation (NAT, vmnet8)                 |
+| PNETLab        | Version: <fill in>                               |
+| Zabbix server  | Zabbix 7.4.15 VMware appliance                   |
+| Devices        | Cisco IOL routers and L2 switches, VPCS hosts    |
+| Protocol       | SNMPv2c, template "Cisco IOS by SNMP"            |
 
 ## Progress
-- [ ] PNETLab installed and topology built
-- [ ] Basic routing configured (OSPF)
-- [ ] Zabbix server installed
-- [ ] SNMP monitoring of routers and switches
+- [x] PNETLab installed and topology built
+- [x] Basic routing configured (static routes)
+- [x] Zabbix server installed (appliance)
+- [x] SNMP monitoring of routers and switches
 - [ ] Zabbix agent on Linux hosts
-- [ ] Triggers and alerts
-- [ ] Failure tests with screenshots
+- [ ] Custom triggers and notifications
+- [x] Failure tests with screenshots
 - [ ] Dashboard and network map
 
-## Troubleshooting
+## Failure tests
+| Test | Action | Result |
+|------|--------|--------|
+| 1 | Shut R6 e0/1 (toward SW2) | SW2 unreachable; R6 stays up and reports the interface problem |
+| 2 | Shut R5 e0/1 (link to R6) | R6 and SW2 unreachable; R5 and SW1 stay up |
 
+Screenshots are in `screenshots/`.
+
+## Troubleshooting
+Full write-up with symptoms, causes, diagnosis and fixes:
+
+Main problems solved:
+- Appliance could not reach routers: VMware promiscuous mode / `/dev/vmnet8` permission
+- Switch ignored `ip default-gateway` because IP routing was enabled
+- Appliance needed static routes into the lab subnets
+- Zabbix database "Connection refused" after an appliance restart
+
+## Repository structure
+```
+
+```
 
 ## License
 MIT
