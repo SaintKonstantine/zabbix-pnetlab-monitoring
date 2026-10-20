@@ -33,13 +33,21 @@ All other devices (R6, SW1, SW2) are polled through R5 using static routes.
 | Protocol       | SNMPv2c, template "Cisco IOS by SNMP"            |
 
 
-## Failure tests
-| Test | Action | Result |
-|------|--------|--------|
-| 1 | Shut R6 e0/1 (toward SW2) | SW2 unreachable; R6 stays up and reports the interface problem |
-| 2 | Shut R5 e0/1 (link to R6) | R6 and SW2 unreachable; R5 and SW1 stay up |
+### Test 1: interface shutdown on R6
+![Before](screenshots/01-before.png)
+![Injection](screenshots/02-test1-injection.png)
+![Link down problem](screenshots/03-test1-link-down.png)
+![SW2 down](screenshots/04-test1-sw2-down.png)
+![Recovery](screenshots/05-test1-recovery.png)
+![Recovered](screenshots/06-test1-recovered.png)
 
-Screenshots are in `screenshots/`.
+### Test 2: link cut on R5
+![Before](screenshots/01-before.png)
+![Injection](screenshots/07-test2-injection.png)
+![R6 unavailable](screenshots/08-test2-r6-unavailable.png)
+![R6 and SW2 down](screenshots/09-test2-r6-sw2-down.png)
+![Recovery](screenshots/10-test2-recovery.png)
+![Recovered](screenshots/11-test2-recovered.png)
 
 ## Troubleshooting
 Full write-up with symptoms, causes, diagnosis and fixes:
