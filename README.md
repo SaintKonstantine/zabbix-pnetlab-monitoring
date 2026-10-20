@@ -34,7 +34,7 @@ All other devices (R6, SW1, SW2) are polled through R5 using static routes.
 
 
 ### Test 1: interface shutdown on R6
-![Before](screenshots/01-before.png)
+![Before](screenshots/01before.png)
 ![Injection](screenshots/02-test1-injection.png)
 ![Link down problem](screenshots/03-test1-link-down.png)
 ![SW2 down](screenshots/04-test1-sw2-down.png)
