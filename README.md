@@ -21,6 +21,7 @@ All other devices (R6, SW1, SW2) are polled through R5 using static routes.
 | VPC1 | eth0 | 192.168.1.1/24 | End host on SW1, gateway 192.168.1.254 |
 | VPC2 | eth0 | 192.168.2.1/24 | End host on SW2, gateway 192.168.2.254 |
 | Zabbix appliance | eth0 | 192.168.139.129/24 | Monitoring server |
+
 ## Environment
 | Component      | Details                                          |
 |----------------|--------------------------------------------------|
