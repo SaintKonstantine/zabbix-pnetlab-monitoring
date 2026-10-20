@@ -33,7 +33,7 @@ All other devices (R6, SW1, SW2) are polled through R5 using static routes.
 | Protocol       | SNMPv2c, template "Cisco IOS by SNMP"            |
 
 ## Lab Report
-[docs/Zabbix-PNETLab-Lab-Report.pdf](docs/Zabbix-PNETLab-Lab-Report.pdf)
+[docs/Zabbix-PNETLab-Lab-Report.pdf](docs/Zabbix-PNETLab-Lab-Report-1.pdf)
 
 
 ### Test 1: Interface shutdown on R6
