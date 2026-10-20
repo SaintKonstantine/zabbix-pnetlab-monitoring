@@ -38,7 +38,6 @@ All other devices (R6, SW1, SW2) are polled through R5 using static routes.
 - [x] Basic routing configured (static routes)
 - [x] Zabbix server installed (appliance)
 - [x] SNMP monitoring of routers and switches
-- [ ] Zabbix agent on Linux hosts
 - [ ] Custom triggers and notifications
 - [x] Failure tests with screenshots
 - [ ] Dashboard and network map
